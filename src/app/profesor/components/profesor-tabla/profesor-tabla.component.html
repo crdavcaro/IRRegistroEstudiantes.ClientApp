@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let profesor of profesores">
+      <th scope="row">{{profesor.id}}</th>
+      <td>{{profesor.nombre}}</td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteById(profesor.id)">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

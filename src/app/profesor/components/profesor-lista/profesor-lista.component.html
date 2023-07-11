@@ -1,0 +1,3 @@
+<div class="list-group">
+  <button *ngFor="let profesor of profesores" type="button" class="list-group-item list-group-item-action" [ngClass]="{'active': profesorSeleccionado !== undefined && profesorSeleccionado.id === profesor.id}" (click)="seleccionarProfesor(profesor)">{{profesor.nombre}}</button>
+</div>

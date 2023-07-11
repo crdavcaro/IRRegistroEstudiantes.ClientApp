@@ -1,0 +1,27 @@
+<div class="d-flex align-self-center justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h2>Registrarse</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="text" class="form-control form-control" id="exampleFormControlInput1" placeholder="Nombre de Usuario" #txtUsername>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
+            <input type="password" id="inputPassword5" class="form-control" placeholder="Contraseña" #txtPassword>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Repetir Contraseña</label>
+            <input type="password" id="inputPassword5" class="form-control" placeholder="Repetir Contraseña" #txtConfirmPassword>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" type="submit" (click)="onRegister(txtUsername.value, txtPassword.value)">Crear Usuario</button>
+            <a [routerLink]="['/auth/login']" class="link login-anchor">¿Ya Estás Registrado?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Administrar Materias</h2>
+  <div class="d-flex flex-row justify-content-end">
+    <a class="btn btn-primary" [routerLink]="['/materias/crear-materia']" aria-current="page" href="#">Crear Materia</a>
+  </div>
+  <div class="container mt-5">
+    <materia-tabla [materias]="materias" (onDelete)="eliminarMateria($event)"></materia-tabla>
+  </div>
+</div>

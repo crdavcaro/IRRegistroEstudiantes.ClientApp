@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <li *ngFor="let materia of materias" class="list-group-item list-group-item-action">
+    <span>
+      {{materia.materia.nombre}} - {{materia.profesor.nombre}}
+    </span>
+    <button type="button" class="btn btn-warning" (click)="quitarProfesorMaterias(materia)">Quitar</button>
+  </li>
+</ul>

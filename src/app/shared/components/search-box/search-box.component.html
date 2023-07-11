@@ -1,0 +1,5 @@
+
+<input class="form-control" list="datalistOptions" autocomplete="off" id="txtSearchBox" placeholder="{{placeholder}}" (keyup)="onKeyPress(txtSearchInput.value)" (change)="searchElement(txtSearchInput.value)" #txtSearchInput>
+<datalist id="datalistOptions">
+  <option *ngFor="let elem of elementos" value="{{elem.text}}">
+</datalist>

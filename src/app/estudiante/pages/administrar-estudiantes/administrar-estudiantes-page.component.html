@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Administrar Estudiantes</h2>
+  <div class="d-flex flex-row justify-content-end">
+    <a class="btn btn-primary" [routerLink]="['/estudiantes/crear-estudiante']" aria-current="page" href="#">Crear Estudiante</a>
+  </div>
+  <div class="container mt-5">
+    <estudiantes-tabla [estudiantes]="estudiantes" (onDelete)="eliminarEstudiante($event)"></estudiantes-tabla>
+  </div>
+</div>

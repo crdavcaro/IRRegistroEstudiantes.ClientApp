@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Crear Materia</h2>
+</div>
+<hr>
+<div class="container">
+    <div class="mb-3">
+      <label for="nombreMateria" class="form-label">Nombre de la Materia</label>
+      <input type="text" class="form-control" id="nombreMateria" placeholder="Nombre de Materia" #txtNombreMateria>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary"
+      (click)="crearMateria(txtNombreMateria.value)">Crear</button>
+    </div>
+</div>

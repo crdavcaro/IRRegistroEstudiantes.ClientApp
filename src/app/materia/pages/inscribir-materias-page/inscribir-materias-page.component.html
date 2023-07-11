@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Inscribir Materias</h2>
+</div>
+<hr>
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <span>
+      <strong>Créditos: </strong>
+      {{creditosCounter}}
+    </span>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h3>Materias</h3>
+      <hr>
+      <materia-lista [materias]="materias" [materiaSeleccionada]="materiaSeleccionada" (onMateriaSeleccionada)="seleccionarMateria($event)"></materia-lista>
+    </div>
+    <div class="col-6">
+      <h3>Profesores</h3>
+      <hr>
+      <profesor-lista [profesores]="profesores" [profesorSeleccionado]="profesorSeleccionado" (onProfesorSeleccionado)="seleccionarProfesor($event)"></profesor-lista>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="mb-3">
+      <button type="submit" class="btn btn-success" [ngClass]="{'btn-disabled': canAdd}"
+      (click)="agregarMateriaProfesor()" [disabled]="canAdd ? null : 'disabled'">Agregar</button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-6">
+      <h3>Inscritas</h3>
+      <hr>
+      <materias-inscritas-lista [materias]="materiasInscritas" (onQuitarMateria)="quitarProfesorMaterias($event)"></materias-inscritas-lista>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="mb-3">
+      <button type="submit" (click)="inscribirMaterias()" class="btn btn-primary">Guardar</button>
+    </div>
+  </div>
+</div>

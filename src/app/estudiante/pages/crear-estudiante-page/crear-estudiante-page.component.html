@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Crear Estudiante</h2>
+</div>
+<hr>
+<div class="container">
+  <div *ngIf="isAdmin" class="mb-3">
+    <label for="txtSearch" class="form-label">Usuarios</label>
+    <shared-search-box placeholder="Buscar Usuarios..." label="txtSearch" (onTextChange)="getNombreUsuario($event)" [elementos]="usuarios"
+      (onDebounce)="buscarUsuarios($event)"></shared-search-box>
+  </div>
+  <div class="mb-3">
+    <label for="txtNombre" class="form-label">Nombres</label>
+    <input [(ngModel)]="estudiante.nombres" type="text" class="form-control" id="txtNombre" required>
+  </div>
+  <div class="mb-3">
+    <label for="txtApellido" class="form-label">Apellidos</label>
+    <input [(ngModel)]="estudiante.apellidos" type="text" class="form-control" id="txtApellido" #txtApellido>
+  </div>
+  <div class="mb-3">
+    <label for="txtCedula" class="form-label">Cedula</label>
+    <input [(ngModel)]="estudiante.cedula" type="number" class="form-control" id="txtCedula" #txtCedula>
+  </div>
+  <div class="mb-3">
+    <label for="txtCorreo" class="form-label">Correo</label>
+    <input [(ngModel)]="estudiante.correo" type="mail" class="form-control" id="txtCorreo" #txtCorreo>
+  </div>
+  <div class="mb-3">
+    <label for="txtCarrera" class="form-label">Carrera</label>
+    <input [(ngModel)]="estudiante.carrera" type="mail" class="form-control" id="txtCarrera" #txtCarrera>
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary"
+      (click)="crearEstudiante()">Crear</button>
+  </div>
+</div>

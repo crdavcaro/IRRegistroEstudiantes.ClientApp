@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Crear Profesor</h2>
+</div>
+<hr>
+<div class="container">
+    <div class="mb-3">
+      <label for="nombreProfesor" class="form-label">Nombre del Profesor</label>
+      <input type="text" class="form-control" id="nombreProfesor" placeholder="Nombre del Profesor" #txtNombreProfesor>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary"
+      (click)="crearProfesor(txtNombreProfesor.value)">Crear</button>
+    </div>
+</div>

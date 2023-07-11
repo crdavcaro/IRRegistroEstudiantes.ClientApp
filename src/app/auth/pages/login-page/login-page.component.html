@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h2>Iniciar Sesion</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="text" class="form-control form-control" id="exampleFormControlInput1" placeholder="Nombre de Usuario" #txtUsername>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Contraseña</label>
+            <input type="password" id="inputPassword5" class="form-control" placeholder="Contraseña" #txtPassword>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" type="submit" (click)= "onLogin(txtUsername.value, txtPassword.value)">Ingresar</button>
+          </div>
+          <div class="mb-3">
+            <a href="./auth/register" class="link">Registrarse</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

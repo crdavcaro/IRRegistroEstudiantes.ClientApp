@@ -1,0 +1,48 @@
+<nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <button *ngIf="isLogedIn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand">Registro de Estudiantes</span>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bienvenido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Materias
+            </a>
+            <ul class="dropdown-menu">
+              <li *ngIf="!isAdmin"><a class="dropdown-item" href="#" data-bs-toggle="offcanvas">Inscribir Materias</a></li>
+              <li *ngIf="isAdmin"><a [routerLink]="['/materias/administrar-materias']" class="dropdown-item" href="#" data-bs-toggle="offcanvas">Administrar Materias</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profesores
+            </a>
+            <ul class="dropdown-menu">
+              <li *ngIf="!isAdmin"><a class="dropdown-item" href="#" data-bs-toggle="offcanvas">Ver Profesores</a></li>
+              <li *ngIf="isAdmin"><a [routerLink]="['/profesores/administrar-profesores']" class="dropdown-item" href="#" data-bs-toggle="offcanvas">Administrar Profesores</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Estudiantes
+            </a>
+            <ul class="dropdown-menu">
+              <li *ngIf="!isAdmin"><a class="dropdown-item" href="#" data-bs-toggle="offcanvas">Ver Estudiantes</a></li>
+              <li *ngIf="isAdmin"><a [routerLink]="['/estudiantes/administrar-estudiante']" class="dropdown-item" href="#" data-bs-toggle="offcanvas">Administrar Estudiantes</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="logout-container d-flex align-items-end">
+          <a class="btn btn-light" aria-current="page" href="#" (click)="onLogout()">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
